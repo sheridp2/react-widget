@@ -22,17 +22,34 @@ const Search = () =>{
       setResults(data.query.search)
     }
 
-    search()
+    const timeoutId = setTimeout(() =>{
+      if(term){
+        search()
+      }
+    }, 750)
+
+    return () =>{
+      clearTimeout(timeoutId)
+    }
+
   }, [term])
 
   const renderedResults = results.map((result) =>{
     return(
-      <div className="item">
+      <div key={result.pageid} className="item">
+      <div className="right floated content">
+        <a
+          className="ui button"
+          href={`https://en.wikipedia.org?curid=${result.pageid}`}
+          >Go to page</a>
+      </div>
         <div className= "content">
           <div className="header">
             {result.title}
           </div>
-            {result.snippet}
+          <span dangerouslySetInnerHTML={{ __html:result.snippet }}>
+          </span>
+
         </div>
       </div>
 
