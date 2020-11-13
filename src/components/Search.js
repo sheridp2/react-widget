@@ -30,7 +30,10 @@ const Search = () =>{
       })
       setResults(data.query.search)
     }
-    search()
+    if(term){
+      search()
+
+    }
   }, [debouncedTerm])
 
 

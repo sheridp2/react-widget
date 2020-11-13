@@ -24,7 +24,7 @@ const Convert = ({ language, text }) =>{
         params: {
           q: debouncedText,
           target: language.value,
-          key:''
+          key: process.env.TRANSLATE_KEY
         }
       })
 
