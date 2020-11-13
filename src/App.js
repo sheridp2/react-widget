@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import Accordion from './components/Accordion'
-import Search from './components/Search'
-import Dropdown from './components/Dropdown'
-import Translate from './components/Translate'
-import Route from './components/Route'
-import Header from './components/Header'
+import Accordion from './components/widgets/Accordion'
+import Search from './components/widgets/Search'
+import Dropdown from './components/widgets/Dropdown'
+import Translate from './components/widgets/Translate'
+import Route from './components/widgets/Route'
+import Header from './components/widgets/Header'
+import VideoSearch from './components/video-search/VideoSearch'
 
 const items = [
   {
@@ -41,7 +42,11 @@ export default () => {
   const [selected, setSelected] = useState(options[0])
    return(
      <div>
+
        <Header />
+       <Route path="/videos">
+         <VideoSearch/>
+       </Route>
        <Route path="/">
          <Accordion items={items} />
        </Route>

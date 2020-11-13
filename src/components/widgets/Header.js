@@ -4,6 +4,9 @@ import Link from './Link'
 const Header = () =>{
   return (
     <div className="ui secondary pointing menu">
+      <Link href="/videos" className="item">
+        Youtube Clone
+      </Link>
       <Link href="/" className="item">
         Accordion
       </Link>
